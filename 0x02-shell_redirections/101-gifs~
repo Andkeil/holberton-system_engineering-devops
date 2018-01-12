@@ -1,2 +1,0 @@
-#!/bin/bash
-ls -Ra | find type -f | sort -fn

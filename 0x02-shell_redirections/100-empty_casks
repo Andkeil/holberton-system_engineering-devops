@@ -1,2 +1,3 @@
 #!/bin/bash
-ls -aR | find -size 0
+ls -aR | find -empty -printf '%f\n'
+

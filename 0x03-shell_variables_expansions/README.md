@@ -1,0 +1,1 @@
+Script 0: Create an alias || Script1: Print hello user

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Script to display "Holberton School" 10 times with while loop
+i=0
+while [ $i  -le 9 ]
+do
+echo "Holberton School"
+(( i++ ))
+done
+exit 0

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Script print time from 0:1 to 12:59
+HOUR=0
+while [ $HOUR -le 12 ]; do
+    echo "Hour: $HOUR"
+    HOUR=$((HOUR+1))
+    MINUTE=1
+    while [ $MINUTE -le 59 ]; do
+        echo $MINUTE
+        MINUTE=$((MINUTE+1))
+        done
+done

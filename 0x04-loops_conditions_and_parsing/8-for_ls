@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Script LS Cut off before first "-"
+LIST="$(ls -1)"
+for i in $LIST; do
+    printf "%s" "$i" | cut -f 2 -d '-'
+done
+exit 0

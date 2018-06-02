@@ -6,12 +6,15 @@ do
 case $i in
 4)
 echo "bad luck from China"
+echo "$i"
 ;;
 9)
 echo "bad luck from Japan"
+echo "$i"
 ;;
 17)
 echo "bad luck from Italy"
+echo "$i"
 ;;
 *)
 echo "$i"

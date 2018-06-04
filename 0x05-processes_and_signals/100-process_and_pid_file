@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Script create file with PID inside, display msg based on sig received, delete file when done
+echo $$ > /var/run/holbertonscript.pid
+trap 'echo I hate the kill command; sudo rm -f /var/run/holbertonscript.pid; exit' 15 3
+trap 'echo Y U NO LOVE ME?!' 2
+while :
+do
+echo "To infinity and beyond"
+sleep 2
+done
+exit 0

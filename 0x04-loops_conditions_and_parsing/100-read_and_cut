@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Script display key elements of /etc/passwd
-cat /etc/passwd | while read line
+cat < /etc/passwd | while read line
 do
-echo $line | cut -f 1,4,6 -d:
+echo "$line" | cut -f 1,4,6 -d:
 done
 exit 0

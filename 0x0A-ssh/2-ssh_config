@@ -1,0 +1,4 @@
+#config file for ssh using private key and no password
+Host *
+    IdentityFile ~/.ssh/holberton
+    PasswordAuthentication no

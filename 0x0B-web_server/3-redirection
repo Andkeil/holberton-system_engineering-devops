@@ -2,6 +2,7 @@
 # Script to configure nginx + redirect
 sudo apt-get -y update
 sudo apt-get install -y nginx
-sudo service nginx start
-sudo sed -i '26 i \ rewrite^/redirect_me www.amazon.com permanent;' /etc/nginx/sites-available/default
+sudo chmod u+x /usr/share/nginx/html/index.html
+echo "Holberton School for the win!" | sudo tee /usr/share/nginx/html/index.html
+sudo sed -i '26 i \     rewrite ^/redirect_me www.amazon.com permanent;' /etc/nginx/sites-available/default
 sudo service nginx restart

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Script debug listening on port 80
+cd /etc/nginx/sites-available/
+cp default ../sites-enabled/default
+service nginx restart

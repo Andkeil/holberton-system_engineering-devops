@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Script displaying information about the subdomain
+
+
+function find_record {
+    if [  "$2"  ]
+    then
+        result=($(dig $2.$1 | awk ' /ANSWER SECTION:/ {getline; print}'))
+	echo "The subdomain $2 is a " "${result[3]}" "record" "and points to" "${result[4]}"
+    else
+        subdomain=( 'www' 'lb-01' 'web-01' 'web-02');
+
+	for i in "${subdomain[@]}"
+	do
+	    result=($(dig $i.$1 | awk '/ANSWER SECTION:/ {getline; print}'))
+	    echo "The subdomain $i is a" "${result[3]}" "record" "and points to" "${result[4]}"
+	done
+    fi
+}
+if [  "$2"  ]
+then
+    find_record $1 $2
+else
+    find_record $1
+fi

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Script to backup mysql databases
+mysqldump -uroot -p --all-databases > backup.sql
+time=$(date +"%d-%m-%Y")
+tar -cvzf "$time.tar.gz" backup.sql

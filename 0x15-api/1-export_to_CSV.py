@@ -18,7 +18,7 @@ if __name__ == "__main__":
         .format(sys.argv[1])
     response = requests.get(url).json()
     username = requests.get("https://jsonplaceholder.typicode.com/users/{}"
-                            .format(sys.argv[1])).json().get("name")
+                            .format(sys.argv[1])).json().get("username")
 
     with open('{}.csv'.format(sys.argv[1]), "w", newline='\n') as file:
         tasker = csv.writer(file, delimiter=',', quoting=csv.QUOTE_ALL)

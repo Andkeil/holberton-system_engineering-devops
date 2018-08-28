@@ -3,11 +3,10 @@
 Gather data from an API and export
 in CSV format
 """
-
+import csv
 import json
 import requests
 import sys
-import csv
 
 
 if __name__ == "__main__":

@@ -11,9 +11,12 @@ import sys
 def top_ten(subreddit):
     url = "http://reddit.com/r/{}/hot/.json?limit=10".format(subreddit)
     req = requests.get(url, headers={'User-agent': 'Holbietest'})
-    if req.json().get("data").get("dist") == 0:
-        print("None")
 
-    links = req.json().get("data").get("children")
-    for link in links:
-        print(link.get("data").get("title"))
+    try:
+        links = req.json().get("data").get("children")
+        if not links:
+            print("None")
+        for link in links:
+            print(link.get("data").get("title"))
+    except Exception:
+        print("None")

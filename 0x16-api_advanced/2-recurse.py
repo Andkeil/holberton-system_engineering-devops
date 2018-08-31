@@ -10,8 +10,8 @@ import sys
 
 
 def recurse(subreddit, hot_list=[], after=""):
-    url = "https://www.reddit.com/r/{}/hot.json?after={}".format(subreddit,
-                                                                 after)
+    url = "https://www.reddit.com/r/{}/hot.json?after={}&limit=100".\
+          format(subreddit, after)
     req = requests.get(url, headers={'User-agent': 'Holbietest'})
     try:
         links = req.json().get("data").get("children")

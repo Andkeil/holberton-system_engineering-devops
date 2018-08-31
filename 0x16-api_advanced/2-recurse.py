@@ -10,18 +10,18 @@ import sys
 
 
 def recurse(subreddit, hot_list=[], after=""):
-    url = "http://reddit.com/r/{}/hot/.json?after={}".format(subreddit, after)
+    url = "https://www.reddit.com/r/{}/hot.json?after={}".format\
+          (subreddit, after)
     req = requests.get(url, headers={'User-agent': 'Holbietest'})
     try:
         links = req.json().get("data").get("children")
         if not links:
-            print("None")
-        else:
-            after = req.json().get("data").get("after")
-            for link in links:
-                hot_list += (link.get("data").get("title"))
-            if after is not None:
-                recurse(subreddit, hot_list. after)
+            return None
+        after = req.json().get("data").get("after")
+        if after == None:
             return hot_list
+        for link in links:
+            hot_list += (link.get("data").get("title"))
+        return recurse(subreddit, hot_list, after)
     except Exception:
-        print("None")
+        return None
